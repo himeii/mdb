@@ -8,7 +8,6 @@ const fanArtAPI = Axios.create({
 export const FanArt = {
   getArtistImages: mbid => {
     const url = `${fanArtAPI.defaults.baseURL}${mbid}?api_key=${FANART_API_KEY}`;
-    console.log(url);
     return fanArtAPI.get(`${mbid}?api_key=${FANART_API_KEY}`);
   }
 };

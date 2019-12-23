@@ -1,21 +1,19 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, SafeAreaView, Platform } from "react-native";
 import Album from "./src/components/Album/Album";
+import { Artist } from "./src/screens/Artist/Artist";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Deezer API goes here or it doesn't</Text>
-      <Album></Album>
-    </View>
+    <SafeAreaView style={styles.container}>
+      <Artist mbid="c9368a03-bf26-40b6-bdfa-9af8d10b568b" />
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center"
+    paddingTop: Platform.OS === "android" ? 25 : 0
   }
 });
